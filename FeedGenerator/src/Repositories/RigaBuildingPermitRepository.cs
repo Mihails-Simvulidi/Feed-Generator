@@ -51,6 +51,7 @@ namespace Repositories
                         ObjectAddress = columns[5].InnerText,
                     };
                 })
+                .OrderByDescending(p => p.PreparationDate)
                 .ToArray();
         }
 
