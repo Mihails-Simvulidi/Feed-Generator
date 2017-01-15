@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pieejamās barotnes</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#RigaBuildingPermits').submit(function () {
+                if ($('input[name=search]').val() == "") {
+                    document.location = "RigaBuildingPermits";
+                    return false;
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>Pieejamās barotnes:</h1>
+    <h2>Rīgas būvatļaujas</h2>
+    <div>
+        <form id="RigaBuildingPermits" action="RigaBuildingPermits">
+            <p>
+                Meklējamais teksts (nav obligāts):
+                <input name="search" />
+            </p>
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>

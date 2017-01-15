@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7FAF1D68-4697-41BE-BF4F-4497BDCC8539}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{762A679F-9F33-480E-8256-245FEFDDA15C}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FeedGenerator", "src\FeedGenerator\FeedGenerator.xproj", "{42658956-7BBF-4D97-97BA-F1154D5A9A51}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Entities", "src\Entities\Entities.xproj", "{E9AEE358-7D98-4E44-AB42-07DDEDF50E09}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Repositories", "src\Repositories\Repositories.xproj", "{92C5E24C-0F04-4387-B95F-D72CDD76352F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42658956-7BBF-4D97-97BA-F1154D5A9A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42658956-7BBF-4D97-97BA-F1154D5A9A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42658956-7BBF-4D97-97BA-F1154D5A9A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42658956-7BBF-4D97-97BA-F1154D5A9A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AEE358-7D98-4E44-AB42-07DDEDF50E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AEE358-7D98-4E44-AB42-07DDEDF50E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AEE358-7D98-4E44-AB42-07DDEDF50E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AEE358-7D98-4E44-AB42-07DDEDF50E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C5E24C-0F04-4387-B95F-D72CDD76352F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C5E24C-0F04-4387-B95F-D72CDD76352F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C5E24C-0F04-4387-B95F-D72CDD76352F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C5E24C-0F04-4387-B95F-D72CDD76352F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42658956-7BBF-4D97-97BA-F1154D5A9A51} = {7FAF1D68-4697-41BE-BF4F-4497BDCC8539}
+		{E9AEE358-7D98-4E44-AB42-07DDEDF50E09} = {7FAF1D68-4697-41BE-BF4F-4497BDCC8539}
+		{92C5E24C-0F04-4387-B95F-D72CDD76352F} = {7FAF1D68-4697-41BE-BF4F-4497BDCC8539}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mihailss.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\FeedGenerator\\FeedGenerator.xproj
+		SccProjectTopLevelParentUniqueName1 = FeedGenerator.sln
+		SccProjectName1 = src/FeedGenerator
+		SccLocalPath1 = src\\FeedGenerator
+		SccProjectUniqueName2 = src\\Entities\\Entities.xproj
+		SccProjectTopLevelParentUniqueName2 = FeedGenerator.sln
+		SccProjectName2 = src/Entities
+		SccLocalPath2 = src\\Entities
+		SccProjectUniqueName3 = src\\Repositories\\Repositories.xproj
+		SccProjectTopLevelParentUniqueName3 = FeedGenerator.sln
+		SccProjectName3 = src/Repositories
+		SccLocalPath3 = src\\Repositories
+	EndGlobalSection
+EndGlobal
