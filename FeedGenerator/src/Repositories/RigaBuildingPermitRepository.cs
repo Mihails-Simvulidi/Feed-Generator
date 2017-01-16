@@ -18,10 +18,8 @@ namespace Repositories
 
         HttpClient _httpClient = new HttpClient();
 
-        public async Task<RigaBuildingPermit[]> GetBuildingPermits(string searchString = null)
+        public async Task<RigaBuildingPermit[]> GetBuildingPermits(DateTime dateFrom, string searchString = null)
         {
-            var dateFrom = DateTime.UtcNow.AddMonths(-1);
-
             var query = new Dictionary<string, string>();
             query["date_from"] = dateFrom.ToString(DateFormat);
 

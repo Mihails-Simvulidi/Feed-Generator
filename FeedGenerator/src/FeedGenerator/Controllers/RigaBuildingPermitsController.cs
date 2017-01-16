@@ -18,9 +18,18 @@ namespace FeedGenerator.Controllers
 
         public async Task<ActionResult> Get(string search = null)
         {
-            var buildingPermits = await _repository.GetBuildingPermits(search);
+            var utcNow = DateTime.UtcNow;
+            var now = TimeZoneInfo.ConvertTimeFromUtc(utcNow, _timeZone);
+            var dateFrom = now.AddMonths(-1);
 
-            var feed = new SyndicationFeed("Rīgas būvatļaujas", null, new Uri(RigaBuildingPermitRepository.BaseUri))
+            var buildingPermits = await _repository.GetBuildingPermits(dateFrom, search);
+
+            var title = "Rīgas būvatļaujas";
+
+            if (!string.IsNullOrEmpty(search))
+                title += $" - {search}";
+
+            var feed = new SyndicationFeed(title, null, new Uri(RigaBuildingPermitRepository.BaseUri))
             {
                 Items = buildingPermits
                     .Select(buildingPermit => CreateSyndicationItem(buildingPermit))
