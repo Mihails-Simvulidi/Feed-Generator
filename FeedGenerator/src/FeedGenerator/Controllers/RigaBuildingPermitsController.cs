@@ -43,8 +43,15 @@ namespace FeedGenerator.Controllers
         {
             var utcOffset = _timeZone.GetUtcOffset(buildingPermit.PreparationDate);
 
+            var searchString = buildingPermit.Object
+                .Replace('(', ' ')
+                .Replace(')', ' ');
+
+            while (searchString.Contains("  "))
+                searchString = searchString.Replace("  ", " ");
+
             var query = new Dictionary<string, string>();
-            query["search"] = buildingPermit.Object;
+            query["search"] = searchString;
             query["date_to"] = query["date_from"] = buildingPermit.PreparationDate.ToString(RigaBuildingPermitRepository.DateFormat);
 
             var uriBuilder = new UriBuilder(RigaBuildingPermitRepository.BaseUri)
