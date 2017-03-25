@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7FAF1D68-4697-41BE-BF4F-4497BDCC8539}"
 EndProject
@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FeedGenerator", "src\FeedGenerator\FeedGenerator.xproj", "{42658956-7BBF-4D97-97BA-F1154D5A9A51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedGenerator", "src\FeedGenerator\FeedGenerator.csproj", "{42658956-7BBF-4D97-97BA-F1154D5A9A51}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Entities", "src\Entities\Entities.xproj", "{E9AEE358-7D98-4E44-AB42-07DDEDF50E09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "src\Entities\Entities.csproj", "{E9AEE358-7D98-4E44-AB42-07DDEDF50E09}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Repositories", "src\Repositories\Repositories.xproj", "{92C5E24C-0F04-4387-B95F-D72CDD76352F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "src\Repositories\Repositories.csproj", "{92C5E24C-0F04-4387-B95F-D72CDD76352F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,17 +48,17 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://mihailss.visualstudio.com/
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = src\\FeedGenerator\\FeedGenerator.xproj
+		SccProjectUniqueName1 = src\\Entities\\Entities.csproj
 		SccProjectTopLevelParentUniqueName1 = FeedGenerator.sln
-		SccProjectName1 = src/FeedGenerator
-		SccLocalPath1 = src\\FeedGenerator
-		SccProjectUniqueName2 = src\\Entities\\Entities.xproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = src\\Entities\\
+		SccProjectUniqueName2 = src\\FeedGenerator\\FeedGenerator.csproj
 		SccProjectTopLevelParentUniqueName2 = FeedGenerator.sln
-		SccProjectName2 = src/Entities
-		SccLocalPath2 = src\\Entities
-		SccProjectUniqueName3 = src\\Repositories\\Repositories.xproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = src\\FeedGenerator\\
+		SccProjectUniqueName3 = src\\Repositories\\Repositories.csproj
 		SccProjectTopLevelParentUniqueName3 = FeedGenerator.sln
-		SccProjectName3 = src/Repositories
-		SccLocalPath3 = src\\Repositories
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = src\\Repositories\\
 	EndGlobalSection
 EndGlobal
