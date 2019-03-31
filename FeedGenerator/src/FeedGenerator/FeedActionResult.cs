@@ -16,13 +16,15 @@ namespace FeedGenerator
         public override void ExecuteResult(ActionContext context)
         {
             context.HttpContext.Response.ContentType = "text/xml";
-            var formatter = new Rss20FeedFormatter(_feed);
-            var xmlSettings = new XmlWriterSettings
+            Rss20FeedFormatter formatter = new Rss20FeedFormatter(_feed);
+            XmlWriterSettings xmlSettings = new XmlWriterSettings
             {
                 //Indent = true,
             };
-            using (var xmlWriter = XmlWriter.Create(context.HttpContext.Response.Body, xmlSettings))
+            using (XmlWriter xmlWriter = XmlWriter.Create(context.HttpContext.Response.Body, xmlSettings))
+            {
                 formatter.WriteTo(xmlWriter);
+            }
         }
     }
 }

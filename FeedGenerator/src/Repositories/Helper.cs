@@ -8,7 +8,7 @@ namespace Repositories
     {
         public static string GetQueryString(Dictionary<string, string> query)
         {
-            var keyValues = query
+            string[] keyValues = query
                 .Select(e => $"{Uri.EscapeDataString(e.Key)}={Uri.EscapeDataString(e.Value)}")
                 .ToArray();
 

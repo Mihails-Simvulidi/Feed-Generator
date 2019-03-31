@@ -18,18 +18,20 @@ namespace FeedGenerator.Controllers
 
         public async Task<ActionResult> Get(string search = null)
         {
-            var utcNow = DateTime.UtcNow;
-            var now = TimeZoneInfo.ConvertTimeFromUtc(utcNow, _timeZone);
-            var dateFrom = now.AddMonths(-1);
+            DateTime utcNow = DateTime.UtcNow;
+            DateTime now = TimeZoneInfo.ConvertTimeFromUtc(utcNow, _timeZone);
+            DateTime dateFrom = now.AddMonths(-1);
 
-            var buildingPermits = await _repository.GetBuildingPermits(dateFrom, search);
+            RigaBuildingPermit[] buildingPermits = await _repository.GetBuildingPermits(dateFrom, search);
 
-            var title = "Rīgas būvatļaujas";
+            string title = "Rīgas būvatļaujas";
 
             if (!string.IsNullOrEmpty(search))
+            {
                 title += $" - {search}";
+            }
 
-            var feed = new SyndicationFeed(title, null, new Uri(RigaBuildingPermitRepository.BaseUri))
+            SyndicationFeed feed = new SyndicationFeed(title, null, new Uri(RigaBuildingPermitRepository.BaseUri))
             {
                 Items = buildingPermits
                     .Select(buildingPermit => CreateSyndicationItem(buildingPermit))
@@ -41,25 +43,27 @@ namespace FeedGenerator.Controllers
 
         SyndicationItem CreateSyndicationItem(RigaBuildingPermit buildingPermit)
         {
-            var utcOffset = _timeZone.GetUtcOffset(buildingPermit.PreparationDate);
+            TimeSpan utcOffset = _timeZone.GetUtcOffset(buildingPermit.PreparationDate);
 
-            var searchString = buildingPermit.Object
+            string searchString = buildingPermit.Object
                 .Replace('(', ' ')
                 .Replace(')', ' ');
 
             while (searchString.Contains("  "))
+            {
                 searchString = searchString.Replace("  ", " ");
+            }
 
-            var query = new Dictionary<string, string>();
+            Dictionary<string, string> query = new Dictionary<string, string>();
             query["search"] = searchString;
             query["date_to"] = query["date_from"] = buildingPermit.PreparationDate.ToString(RigaBuildingPermitRepository.DateFormat);
 
-            var uriBuilder = new UriBuilder(RigaBuildingPermitRepository.BaseUri)
+            UriBuilder uriBuilder = new UriBuilder(RigaBuildingPermitRepository.BaseUri)
             {
                 Query = Helper.GetQueryString(query),
             };
 
-            var item = new SyndicationItem(buildingPermit.Object, buildingPermit.ObjectAddress, uriBuilder.Uri)
+            SyndicationItem item = new SyndicationItem(buildingPermit.Object, buildingPermit.ObjectAddress, uriBuilder.Uri)
             {
                 PublishDate = new DateTimeOffset(buildingPermit.PreparationDate, utcOffset),
             };
@@ -75,7 +79,9 @@ namespace FeedGenerator.Controllers
             if (!_disposedValue)
             {
                 if (disposing)
+                {
                     _repository.Dispose();
+                }
 
                 _disposedValue = true;
             }

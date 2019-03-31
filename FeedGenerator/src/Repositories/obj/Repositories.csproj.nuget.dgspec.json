@@ -1,0 +1,103 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Repositories\\Repositories.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Mihails\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mihails\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Repositories\\Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Repositories\\Repositories.csproj",
+        "projectName": "Repositories",
+        "projectPath": "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Repositories\\Repositories.csproj",
+        "packagesPath": "C:\\Users\\Mihails\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Repositories\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mihails\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.1, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

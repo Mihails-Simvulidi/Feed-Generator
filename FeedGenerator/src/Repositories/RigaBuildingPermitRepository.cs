@@ -14,34 +14,37 @@ namespace Repositories
         public const string BaseUri = "http://atdep.rcc.lv/exp/buve/atlaujas.aspx";
         public const string DateFormat = "dd.MM.yyyy";
 
-        static CultureInfo _cultureInfo = new CultureInfo("lv-LV");
-
-        HttpClient _httpClient = new HttpClient();
+        static readonly CultureInfo _cultureInfo = new CultureInfo("lv-LV");
+        readonly HttpClient _httpClient = new HttpClient();
 
         public async Task<RigaBuildingPermit[]> GetBuildingPermits(DateTime dateFrom, string searchString = null)
         {
-            var query = new Dictionary<string, string>();
-            query["date_from"] = dateFrom.ToString(DateFormat);
+            Dictionary<string, string> query = new Dictionary<string, string>
+            {
+                ["date_from"] = dateFrom.ToString(DateFormat)
+            };
 
             if (!string.IsNullOrEmpty(searchString))
+            {
                 query["search"] = searchString;
+            }
 
-            var uriBuilder = new UriBuilder(BaseUri)
+            UriBuilder uriBuilder = new UriBuilder(BaseUri)
             {
                 Query = Helper.GetQueryString(query),
             };
 
-            var html = await _httpClient.GetStringAsync(uriBuilder.Uri);
-            var htmlDocument = new HtmlDocument();
+            string html = await _httpClient.GetStringAsync(uriBuilder.Uri);
+            HtmlDocument htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(html);
-            var resultTable = htmlDocument.GetElementbyId("results");
+            HtmlNode resultTable = htmlDocument.GetElementbyId("results");
 
             return resultTable
                 .Elements("tr")
                 .Skip(1)
                 .Select(row =>
                 {
-                    var columns = row.Elements("td").ToArray();
+                    HtmlNode[] columns = row.Elements("td").ToArray();
                     return new RigaBuildingPermit
                     {
                         PreparationDate = DateTime.ParseExact(columns[0].InnerText, DateFormat, _cultureInfo),
@@ -61,7 +64,9 @@ namespace Repositories
             if (!_disposedValue)
             {
                 if (disposing)
+                {
                     _httpClient.Dispose();
+                }
 
                 _disposedValue = true;
             }
