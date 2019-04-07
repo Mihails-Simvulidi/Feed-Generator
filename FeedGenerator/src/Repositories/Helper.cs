@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Repositories
 {
-    public static class Helper
+    public static class RepositoryHelper
     {
         public static string GetQueryString(Dictionary<string, string> query)
         {

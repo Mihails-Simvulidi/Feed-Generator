@@ -30,20 +30,24 @@ namespace FeedGenerator.Controllers
                 title += $" - {search}";
             }
 
-            SyndicationFeed feed = new SyndicationFeed(title, null, new Uri(RigaBuildingPermitRepository.BaseUri))
+            SyndicationFeed feed = new SyndicationFeed(title, null, new Uri(RigaBuildingPermitRepository.BaseUrl));
+
+            try
             {
-                Items = buildingPermits
+                feed.Items = buildingPermits
                     .Select(buildingPermit => CreateSyndicationItem(buildingPermit))
-                    .ToArray(),
-            };
+                    .ToArray();
+            }
+            catch (Exception e)
+            {
+                FeedHelper.AddExceptionToFeed(feed, e);
+            }
 
             return new FeedActionResult(feed);
         }
 
         private SyndicationItem CreateSyndicationItem(RigaBuildingPermit buildingPermit)
         {
-            TimeSpan utcOffset = _timeZone.GetUtcOffset(buildingPermit.PreparationDate);
-
             string searchString = buildingPermit.Object
                 .Replace('(', ' ')
                 .Replace(')', ' ');
@@ -59,14 +63,14 @@ namespace FeedGenerator.Controllers
             };
             query["date_to"] = query["date_from"] = buildingPermit.PreparationDate.ToString(RigaBuildingPermitRepository.DateFormat);
 
-            UriBuilder uriBuilder = new UriBuilder(RigaBuildingPermitRepository.BaseUri)
+            UriBuilder uriBuilder = new UriBuilder(RigaBuildingPermitRepository.BaseUrl)
             {
-                Query = Helper.GetQueryString(query),
+                Query = RepositoryHelper.GetQueryString(query),
             };
 
             SyndicationItem item = new SyndicationItem(buildingPermit.Object, buildingPermit.ObjectAddress, uriBuilder.Uri)
             {
-                PublishDate = new DateTimeOffset(buildingPermit.PreparationDate, utcOffset),
+                PublishDate = FeedHelper.GetDateTimeOffsetLV(buildingPermit.PreparationDate),
             };
 
             return item;

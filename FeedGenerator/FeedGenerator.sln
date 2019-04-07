@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7FAF1D68-4697-41BE-BF4F-4497BDCC8539}"
 EndProject
@@ -43,22 +43,7 @@ Global
 		{E9AEE358-7D98-4E44-AB42-07DDEDF50E09} = {7FAF1D68-4697-41BE-BF4F-4497BDCC8539}
 		{92C5E24C-0F04-4387-B95F-D72CDD76352F} = {7FAF1D68-4697-41BE-BF4F-4497BDCC8539}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://mihailss.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = src\\Entities\\Entities.csproj
-		SccProjectTopLevelParentUniqueName1 = FeedGenerator.sln
-		SccLocalPath1 = .
-		SccProjectFilePathRelativizedFromConnection1 = src\\Entities\\
-		SccProjectUniqueName2 = src\\FeedGenerator\\FeedGenerator.csproj
-		SccProjectTopLevelParentUniqueName2 = FeedGenerator.sln
-		SccLocalPath2 = .
-		SccProjectFilePathRelativizedFromConnection2 = src\\FeedGenerator\\
-		SccProjectUniqueName3 = src\\Repositories\\Repositories.csproj
-		SccProjectTopLevelParentUniqueName3 = FeedGenerator.sln
-		SccLocalPath3 = .
-		SccProjectFilePathRelativizedFromConnection3 = src\\Repositories\\
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51AD32EA-D3BB-409B-8038-96E3ABCD0881}
 	EndGlobalSection
 EndGlobal

@@ -24,6 +24,13 @@ namespace Repositories
                 OptionEmptyCollection = true,
             };
             htmlDocument.LoadHtml(html);
+            HtmlNode titleNode = htmlDocument.DocumentNode.SelectSingleNode("//a[@class='cur']");
+
+            if (titleNode == null)
+            {
+                throw new Exception("Invalid web page retrieved.");
+            }
+
             HtmlNodeCollection resultDivs = htmlDocument.DocumentNode.SelectNodes("//div[@class='content_block_item discussion_item ']");
 
             return resultDivs

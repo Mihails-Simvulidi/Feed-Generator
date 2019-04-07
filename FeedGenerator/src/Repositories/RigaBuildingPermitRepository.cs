@@ -11,7 +11,7 @@ namespace Repositories
 {
     public class RigaBuildingPermitRepository : IDisposable
     {
-        public const string BaseUri = "http://atdep.rcc.lv/exp/buve/atlaujas.aspx";
+        public const string BaseUrl = "http://atdep.rcc.lv/exp/buve/atlaujas.aspx";
         public const string DateFormat = "dd.MM.yyyy";
         private static readonly CultureInfo _cultureInfo = new CultureInfo("lv-LV");
         private readonly HttpClient _httpClient = new HttpClient();
@@ -28,9 +28,9 @@ namespace Repositories
                 query["search"] = searchString;
             }
 
-            UriBuilder uriBuilder = new UriBuilder(BaseUri)
+            UriBuilder uriBuilder = new UriBuilder(BaseUrl)
             {
-                Query = Helper.GetQueryString(query),
+                Query = RepositoryHelper.GetQueryString(query),
             };
 
             string html = await _httpClient.GetStringAsync(uriBuilder.Uri);
