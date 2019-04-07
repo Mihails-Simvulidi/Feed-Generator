@@ -12,9 +12,8 @@ namespace FeedGenerator.Controllers
     [Route("[controller]")]
     public class RigaBuildingPermitsController : Controller
     {
-        static TimeZoneInfo _timeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
-
-        RigaBuildingPermitRepository _repository = new RigaBuildingPermitRepository();
+        private static readonly TimeZoneInfo _timeZone = TimeZoneInfo.FindSystemTimeZoneById("FLE Standard Time");
+        private readonly RigaBuildingPermitRepository _repository = new RigaBuildingPermitRepository();
 
         public async Task<ActionResult> Get(string search = null)
         {
@@ -41,7 +40,7 @@ namespace FeedGenerator.Controllers
             return new FeedActionResult(feed);
         }
 
-        SyndicationItem CreateSyndicationItem(RigaBuildingPermit buildingPermit)
+        private SyndicationItem CreateSyndicationItem(RigaBuildingPermit buildingPermit)
         {
             TimeSpan utcOffset = _timeZone.GetUtcOffset(buildingPermit.PreparationDate);
 
@@ -54,8 +53,10 @@ namespace FeedGenerator.Controllers
                 searchString = searchString.Replace("  ", " ");
             }
 
-            Dictionary<string, string> query = new Dictionary<string, string>();
-            query["search"] = searchString;
+            Dictionary<string, string> query = new Dictionary<string, string>
+            {
+                ["search"] = searchString
+            };
             query["date_to"] = query["date_from"] = buildingPermit.PreparationDate.ToString(RigaBuildingPermitRepository.DateFormat);
 
             UriBuilder uriBuilder = new UriBuilder(RigaBuildingPermitRepository.BaseUri)

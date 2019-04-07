@@ -13,9 +13,8 @@ namespace Repositories
     {
         public const string BaseUri = "http://atdep.rcc.lv/exp/buve/atlaujas.aspx";
         public const string DateFormat = "dd.MM.yyyy";
-
-        static readonly CultureInfo _cultureInfo = new CultureInfo("lv-LV");
-        readonly HttpClient _httpClient = new HttpClient();
+        private static readonly CultureInfo _cultureInfo = new CultureInfo("lv-LV");
+        private readonly HttpClient _httpClient = new HttpClient();
 
         public async Task<RigaBuildingPermit[]> GetBuildingPermits(DateTime dateFrom, string searchString = null)
         {

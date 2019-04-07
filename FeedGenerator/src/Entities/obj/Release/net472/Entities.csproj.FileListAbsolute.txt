@@ -1,0 +1,8 @@
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\bin\Release\net472\Entities.dll
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\bin\Release\net472\Entities.pdb
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Release\net472\Entities.csprojAssemblyReference.cache
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Release\net472\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Release\net472\Entities.AssemblyInfoInputs.cache
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Release\net472\Entities.AssemblyInfo.cs
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Release\net472\Entities.dll
+C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Release\net472\Entities.pdb

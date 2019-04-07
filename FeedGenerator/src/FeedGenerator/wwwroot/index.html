@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Pieejamās RSS barotnes</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
         $(function () {
             $('#RigaBuildingPermits').submit(function () {
@@ -11,6 +11,11 @@
                     document.location = "RigaBuildingPermits";
                     return false;
                 }
+            })
+
+            $('#AgricultureProjects').submit(function () {
+                document.location = "AgricultureProjects";
+                return false;
             })
         });
     </script>
@@ -24,6 +29,12 @@
                 Meklējamais teksts (nav obligāts):
                 <input name="search" />
             </p>
+            <input type="submit" value="Dabūt barotni" />
+        </form>
+    </div>
+    <h2>Zemkopības ministrijas sabiedriskās apspriešanas</h2>
+    <div>
+        <form id="AgricultureProjects" action="AgricultureProjects">
             <input type="submit" value="Dabūt barotni" />
         </form>
     </div>

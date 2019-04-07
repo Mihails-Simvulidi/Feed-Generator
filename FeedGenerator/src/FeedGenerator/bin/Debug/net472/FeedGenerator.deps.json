@@ -1,6 +1,6 @@
 {
   "runtimeTarget": {
-    "name": ".NETFramework,Version=v4.7.2/win7-x86",
+    "name": ".NETFramework,Version=v4.7.2/",
     "signature": "ba97581c233a3815c3e25490d7e47793db90e9c2"
   },
   "compilationOptions": {
@@ -1850,7 +1850,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.7.2/win7-x86": {
+    ".NETFramework,Version=v4.7.2/": {
       "FeedGenerator/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics": "2.2.0",

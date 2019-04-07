@@ -15,6 +15,10 @@
     <PackageId>FeedGenerator</PackageId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="App.config" />
     <None Update="wwwroot\**\*">

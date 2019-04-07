@@ -6,7 +6,7 @@ namespace FeedGenerator
 {
     public class FeedActionResult : ActionResult
     {
-        SyndicationFeed _feed;
+        private readonly SyndicationFeed _feed;
 
         public FeedActionResult(SyndicationFeed feed)
         {
