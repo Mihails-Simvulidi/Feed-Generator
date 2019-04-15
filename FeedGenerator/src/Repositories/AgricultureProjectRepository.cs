@@ -50,7 +50,6 @@ namespace Repositories
                         Url = new Uri(BaseUrl, linkNode.Attributes["href"].Value),
                     };
                 })
-                .OrderByDescending(p => p.PublishDate)
                 .ToArray();
         }
 

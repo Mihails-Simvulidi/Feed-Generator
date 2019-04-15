@@ -17,6 +17,11 @@
                 document.location = "AgricultureProjects";
                 return false;
             })
+
+            $('#TransportProjects').submit(function () {
+                document.location = "TransportProjects";
+                return false;
+            })
         });
     </script>
 </head>
@@ -35,6 +40,12 @@
     <h2>Zemkopības ministrijas sabiedriskās apspriešanas</h2>
     <div>
         <form id="AgricultureProjects" action="AgricultureProjects">
+            <input type="submit" value="Dabūt barotni" />
+        </form>
+    </div>
+    <h2>Satiksmes ministrijas izstrādē esošie attīstības plānošanas dokumenti un tiesību akti</h2>
+    <div>
+        <form id="TransportProjects" action="TransportProjects">
             <input type="submit" value="Dabūt barotni" />
         </form>
     </div>

@@ -5,4 +5,3 @@ C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Debug
 C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Debug\net472\Entities.AssemblyInfo.cs
 C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Debug\net472\Entities.dll
 C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Debug\net472\Entities.pdb
-C:\Users\Mihails\Source\Repos\FeedGenerator\FeedGenerator\src\Entities\obj\Debug\net472\Entities.csprojAssemblyReference.cache
