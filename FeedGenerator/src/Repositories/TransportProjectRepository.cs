@@ -31,6 +31,12 @@ namespace Repositories
                 .Select(row =>
                 {
                     HtmlNode[] columns = row.Elements("td").ToArray();
+
+                    if (columns.Length < 4)
+                    {
+                        return null;
+                    }
+
                     return new TransportProject
                     {
                         Name = columns[0].InnerText,
@@ -38,6 +44,7 @@ namespace Repositories
                         ApplyingInfo = columns[3].InnerText,
                     };
                 })
+                .Where(project => project != null)
                 .ToArray();
         }
 
