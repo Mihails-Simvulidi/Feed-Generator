@@ -32,7 +32,7 @@ namespace Repositories
                 {
                     HtmlNode[] columns = row.Elements("td").ToArray();
 
-                    if (columns.Length < 4)
+                    if (columns.Length < 4 || columns.All(c => string.IsNullOrWhiteSpace(c.InnerText)))
                     {
                         return null;
                     }

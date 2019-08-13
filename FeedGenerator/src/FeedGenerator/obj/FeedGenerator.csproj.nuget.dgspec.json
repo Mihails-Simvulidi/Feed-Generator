@@ -113,6 +113,11 @@
             }
           }
         }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
       }
     },
     "C:\\Users\\Mihails\\Source\\Repos\\FeedGenerator\\FeedGenerator\\src\\Repositories\\Repositories.csproj": {
