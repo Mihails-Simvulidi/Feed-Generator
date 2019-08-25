@@ -43,11 +43,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Repositories\Repositories.csproj" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <ProjectReference Include="..\FeedGenerator.Repositories\FeedGenerator.Repositories.csproj" />
   </ItemGroup>
 
 </Project>
