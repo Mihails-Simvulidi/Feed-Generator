@@ -1,0 +1,14 @@
+{
+    "dependencies": {
+        "Entities": "1.0.0-*",
+        "HtmlAgilityPack": "1.4.9.5"
+    },
+    "frameworks": {
+        "net452": {
+            "frameworkAssemblies": {
+                "System.Net.Http": "4.0.0.0"
+            }
+        }
+    },
+    "version": "1.0.0-*"
+}
