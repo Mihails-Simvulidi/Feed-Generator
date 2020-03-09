@@ -42,7 +42,7 @@ namespace Repositories
                     return new TransportProject
                     {
                         Name = columns[0].InnerText,
-                        PublishDate = DateTime.ParseExact(dateString, "dd.MM.yyyy", _cultureInfo),
+                        PublishDate = DateTime.ParseExact(dateString, "d.MM.yyyy", _cultureInfo),
                         ApplyingInfo = columns[3].InnerText,
                     };
                 })
