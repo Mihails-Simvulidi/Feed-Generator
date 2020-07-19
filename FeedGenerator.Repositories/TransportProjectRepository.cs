@@ -10,7 +10,7 @@ namespace Repositories
 {
     public class TransportProjectRepository : IDisposable
     {
-        public static readonly Uri BaseUrl = new Uri("http://www.sam.gov.lv/satmin/content/?cat=553");
+        public static readonly Uri BaseUrl = new Uri("https://www.sam.gov.lv/lv/izstrade-esosie-attistibas-planosanas-dokumenti-un-tiesibu-akti");
         private static readonly CultureInfo _cultureInfo = new CultureInfo("lv-LV");
         private readonly HttpClient _httpClient = new HttpClient();
 
@@ -23,7 +23,7 @@ namespace Repositories
                 OptionEmptyCollection = true,
             };
             htmlDocument.LoadHtml(html);
-            HtmlNode resultTableBody = htmlDocument.DocumentNode.SelectSingleNode("//table[@class='rte_table']/tbody");
+            HtmlNode resultTableBody = htmlDocument.DocumentNode.SelectSingleNode("//div[@class='cke_editable clearfix text__text-content']/table/tbody");
 
             return resultTableBody
                 .Elements("tr")
