@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Repositories
 {
@@ -24,6 +25,7 @@ namespace Repositories
             };
             htmlDocument.LoadHtml(html);
             HtmlNode resultTableBody = htmlDocument.DocumentNode.SelectSingleNode("//div[@class='cke_editable clearfix text__text-content']/table/tbody");
+            Regex dateRegex = new Regex(@"\d{1,2}.\d{2}.\d{4}", RegexOptions.RightToLeft);
 
             return resultTableBody
                 .Elements("tr")
@@ -37,12 +39,12 @@ namespace Repositories
                         return null;
                     }
 
-                    string dateString = columns[1].InnerText.TrimEnd(' ', '.');
+                    Match dateRegexMatch = dateRegex.Match(columns[1].InnerText);
 
                     return new TransportProject
                     {
                         Name = columns[0].InnerText,
-                        PublishDate = DateTime.ParseExact(dateString, "d.MM.yyyy", _cultureInfo),
+                        PublishDate = DateTime.ParseExact(dateRegexMatch.Value, "d.MM.yyyy", _cultureInfo),
                         ApplyingInfo = columns[3].InnerText,
                     };
                 })
